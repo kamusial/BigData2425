@@ -23,15 +23,15 @@ while True:
     users_list.append(user_tmp)
     user_tmp = []
     decission = input('Czy chcesz dodać kolejnego użytkownika?  T/N   ')
-    if decission == 'T':
+    if decission[0].lower() == 't':
         print('Ok, dodaj kolejną osobę')
-    elif decission == 'N':
+    elif decission[0].lower() == 'n':
         print('Ok, koniec dodawania osób')
         break
     else:
         print('Nierozpoznany wobór, jeszcze raz')
-        decission = input('Czy chcesz dodać kolejnego użytkownika?  T/N   ')
-        if decission == 'T':
+        decission[0] = input('Czy chcesz dodać kolejnego użytkownika?  T/N   ')
+        if decission.lower() == 't':
             print('Ok, dodaj kolejną osobę')
         else:
             print('koniec dodawania osób')
