@@ -4,4 +4,3 @@ while True:
         break
 
 print('Dalsza część programu')
-    
