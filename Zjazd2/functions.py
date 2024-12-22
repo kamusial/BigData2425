@@ -1,3 +1,9 @@
+import datetime
+
+def prepare_file_name():
+    now = datetime.datetime.now()
+    return now.strftime('_%H%M%S')
+
 users = {'Kamil': '123', 'Mario': 'M11'}
 characters = set(',./;\'[]')
 digits = set('0123456789')
@@ -35,6 +41,5 @@ def passwd_valid(passwd):
 def add_user(login, passwd):
     users[login] = passwd
     print('Użytkownik dodany')
-
 
 
