@@ -1,12 +1,15 @@
-users = {'Kamil': '123', 'Mario': 'M11'}
+# import functions
+from functions import *
 
 login = input('Podaj login:   ')
 passwd = input('Podaj hasło:   ')
-if login in users.keys():
-    if passwd == users[login]:
-        print('Zalogowany')
-    else:
-        exit()
+
+if user_exist(login) and password_correct(login, passwd):
+    print('użytkownik zalogowany')
+
+
+
+
 else:
     print(f'Rejestracja {login}')
     users[login] = passwd
