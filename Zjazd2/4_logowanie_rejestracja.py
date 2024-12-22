@@ -2,7 +2,7 @@
 from functions import *
 
 while True:
-    decission = input('Logowanie bądź Rejestracja  L / R')
+    decission = input('Logowanie bądź Rejestracja  L / R:  ')
     if decission[0].lower() == 'l':
         login = input('Podaj login:   ')
         passwd = input('Podaj hasło:   ')

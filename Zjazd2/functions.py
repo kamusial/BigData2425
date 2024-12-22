@@ -1,6 +1,6 @@
 users = {'Kamil': '123', 'Mario': 'M11'}
-characters = {',./;\'[]'}
-digits = {'0123456789'}
+characters = set(',./;\'[]')
+digits = set('0123456789')
 
 
 def user_exist(login):
