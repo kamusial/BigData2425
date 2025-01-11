@@ -10,7 +10,7 @@ class Product:
         return f"Product(ID: {self.product_id}, Name: {self.name}, Price: {self.price})"
 
 
-class SalesDataL:    # zarządzanie danymi sprzedaży
+class SalesData:    # zarządzanie danymi sprzedaży
     def __init__(self):
         self.sales = []
 
@@ -31,9 +31,31 @@ class  SalesAnalysis:    # analiza danych
 
     def best_selling_product(self):
         # najlepie sprzedający się produkt
+        info = {}
+        for sale in self.sales_data.get_all_sales():
+            product = sale['product']
+            quantity = sale['quantity']
+            if product.name not in info:
+                info[product.name] = 0
+            info[product.name] += quantity
+        best_product = max(info, key=info.get)
+        return  best_product, info[best_product]
 
-    def sales_summary(self):
-        # podsumowanie sprzedaży
+
+    # def sales_summary(self):
+    #     # podsumowanie sprzedaży
 
 
 
+product1 = Product(1, 'Laptop', 3000)
+product2 = Product(2, 'Phone', 1500)
+product3 = Product(3, 'Headphones', 300)
+
+sales_data = SalesData()
+sales_data.add_sale(product1, 5)
+sales_data.add_sale(product2, 10)
+sales_data.add_sale(product3, 15)
+sales_data.add_sale(product2, 5)
+
+analysis = SalesAnalysis(sales_data)
+print(f'Całkowity przychód: {analysis.revenue()} PLN')
