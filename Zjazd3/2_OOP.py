@@ -5,6 +5,9 @@ class BankAccount:
         self.owner = owner
         self.balance = balance
 
+    def __str__(self):
+        return f'Konto należy do {self.owner} i jest na nim {self.balance} kasy'
+
     def deposit(self, amount):
         if amount > 0:
             self.balance += amount
@@ -40,3 +43,5 @@ konto2.display_balance()
 konto2.deposit(300)
 konto2.withdraw(300)
 konto2.display_balance()
+
+print(konto2)

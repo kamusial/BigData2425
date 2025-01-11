@@ -18,4 +18,13 @@ if response_users.status_code == response_posts.status_code == response_comments
 else:
     raise Exception('Nie udało się pobrać danych')
 
-pprint(data_users)
+df_users = pd.DataFrame(data_users)
+df_posts = pd.DataFrame(data_posts)
+df_comments = pd.DataFrame(data_comments)
+
+print(df_users.to_string())
+# zaparkowane
+
+posts_per_user = df_posts.groupby('userId', as_index=False)['id'].count()
+posts_per_user.rename(columns={'id': 'posts_count'}, inplace=True)
+print(posts_per_user)
