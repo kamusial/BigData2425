@@ -15,7 +15,7 @@ class SalesData:    # zarządzanie danymi sprzedaży
         self.sales = []
 
     def add_sale(self, product, quantity):
-        self.sales.append({'produkt': product, "quantity": quantity})
+        self.sales.append({'product': product, 'quantity': quantity})
 
     def get_all_sales(self):
         return self.sales
