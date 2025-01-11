@@ -10,7 +10,8 @@ print(f'Imię to: {file1["imie"]}')
 # Obiekt zawierający listę produktów
 file2 = {
   "nazwa_sklepu": "Sklep Komputerowy",
-  "adres": {
+  "adres":
+  {
     "ulica": "Długa",
     "numer": 10,
     "miasto": "Warszawa"
@@ -28,9 +29,9 @@ file2 = {
     }
   ]
 }
-print(f'nazwa sklepu {file2["nazwa_sklepu"]}')
+print(f'nazwa sklepu: {file2["nazwa_sklepu"]}')
 print(f'Ulica w adresie: {file2["adres"]["ulica"]}')
-print(f'Cena myszy {file2["produkty"][1]["cena"]}')
+print(f'Cena myszy: {file2["produkty"][1]["cena"]}')
 file2["produkty"][0]["stan"] = 'nowy'
 
 nowy_produkt = {
