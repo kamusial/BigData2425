@@ -1,9 +1,9 @@
 class Auto:
-    def __init__(self,color, year):
+    def __init__(self, color, year):
         self.color = color
         self.condition = 5
         self.mileage = 0
-        self.age = 2024 - year
+        self.age = 2025 - year
 
     def change_mileage(self, km):
         if km >= 0:
@@ -15,10 +15,9 @@ class Auto:
                 self.mileage += km
 
 
-
-auto11 = Auto()
-auto12 = Auto()
+auto11 = Auto('red', 2021)
+auto12 = Auto('blue', 1999)
 print(auto11.color)
-auto11.color = 'red'
+auto11.color = 'white'
 auto12.mileage += 100
 print(auto11.color)
