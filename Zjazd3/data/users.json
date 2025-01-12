@@ -1,0 +1,9 @@
+[
+    {"name": "Alice", "age": 25, "country": "USA", "gender": "Female", "hobby": "Reading"},
+    {"name": "Bob", "age": 30, "country": "Canada", "gender": "Male", "hobby": "Hiking"},
+    {"name": "Charlie", "age": 35, "country": "USA", "gender": "Male", "hobby": "Gaming"},
+    {"name": "Diana", "age": 28, "country": "UK", "gender": "Female", "hobby": "Reading"},
+    {"name": "Eve", "age": 22, "country": "Canada", "gender": "Female", "hobby": "Gaming"},
+    {"name": "Frank", "age": 40, "country": "Germany", "gender": "Male", "hobby": "Hiking"},
+    {"name": "Grace", "age": 19, "country": "USA", "gender": "Female", "hobby": "Photography"}
+]
