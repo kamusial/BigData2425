@@ -8,9 +8,9 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 
-df = pd.read_csv('data\\heart.csv', comment='#')
+df = pd.read_csv('data\\fetal_health.csv', comment='#')
 X = df.iloc[:, :-1]
-y = df.target
+y = df.fetal_health
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.2)
 
 print('\nLogistic Regression')
