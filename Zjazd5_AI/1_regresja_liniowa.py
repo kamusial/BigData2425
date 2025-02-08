@@ -12,13 +12,13 @@ print(f'Po zmianie jednostek: \n{df.head(10)}')
 
 # niezależne 2 kolumny - gender i height. Wynik weight.
 # wszyscy
-plt.hist(df.Weight, bins=50)
-plt.show()
+# plt.hist(df.Weight, bins=50)
+# plt.show()
 
 # osobno panie i panowie
-plt.hist(df.query("Gender=='Male'").Weight, bins=50)
-plt.hist(df.query("Gender=='Female'").Weight, bins=50)
-plt.show()
+# plt.hist(df.query("Gender=='Male'").Weight, bins=50)
+# plt.hist(df.query("Gender=='Female'").Weight, bins=50)
+# plt.show()
 
 df = pd.get_dummies(df)   # usuwam dane nienumeryczne, zamienia na numeryczne
 print(df.head())
@@ -29,5 +29,12 @@ print(df.head())
 
 # dane na stole
 # Gender  0 - mezczyzna,     1 - kobieta
+model = LinearRegression()
+model.fit( df[['Height', 'Gender']]       , df['Weight']      )
 
+print(f'Współczynnik kierunkowy: {model.coef_}\nWyraz wolny: {model.intercept_}')
 
+print(f'waga = wzrost * 1.07 - plec * 8.8 - 102.5')
+
+# sprawdzenie
+print(model.predict([[192, 0], [167, 1], [80, 1]] ))
