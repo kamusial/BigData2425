@@ -39,7 +39,7 @@ print(Counter(y))
 # model.fit(X_train, y_train)
 # y_pred = model.predict(X_test)
 # print(accuracy_score(y_test, y_pred))
-
+#
 score = []
 kfold = RepeatedStratifiedKFold(n_splits=10, n_repeats=5)
 for train, test in kfold.split(X, y):
