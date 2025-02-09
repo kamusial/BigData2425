@@ -24,8 +24,12 @@ print(pd.DataFrame(model.feature_importances_, X.columns))
 print('Siatka parametrów')
 model = DecisionTreeClassifier()
 params = {
-    'max_depth': [2, 3, 4],
-    'criterion': ['gini', 'entropy', 'log_loss']
+    'max_depth': range(5, 20),
+    'criterion': ['gini', 'entropy', 'log_loss'],
+    'min_samples_split': range(2, 5),
+    'max_features': range(3, X_train.shape[1]+1, 2),
+    'min_samples_leaf': range(1, 5),
+    'min_weight_fraction_leaf': np.arange(0, 3, 0.5)
 }
 
 grid = GridSearchCV(model, params, cv=5, verbose=2)
