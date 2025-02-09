@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 
@@ -24,20 +24,11 @@ sns.scatterplot(data=df, x='petallength', y='petalwidth', hue='class')
 plt.scatter(5.2, 1.45, c='r')
 plt.show()
 
-print('Klasyfikator')
+print('Klasyfikator Decission Tree')
 X = df.iloc[:, 0:4]
 y = df.class_value
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
-model = KNeighborsClassifier(n_neighbors=100, weights='distance')  #distance, uniform
+model = DecisionTreeClassifier(criterion='gini', splitter='best', max_depth=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0.0, max_features=None, random_state=None, max_leaf_nodes=None, min_impurity_decrease=0.0, class_weight=None, ccp_alpha=0.0, monotonic_cst=None)
 model.fit(X_train, y_train)
 print(model.score(X_test, y_test))
 print(pd.DataFrame(confusion_matrix(y_test, model.predict(X_test))))
-
-results = []
-for k in range(1, 101):
-    model = KNeighborsClassifier(n_neighbors=k, weights='uniform')
-    model.fit(X_train, y_train)
-    results.append(model.score(X_test, y_test))
-
-plt.plot(range(1, 101), results)
-plt.show()
