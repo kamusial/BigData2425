@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.11.2 on win32)" generated="2025-03-01T14:13:52.015104" rpa="false" schemaversion="5">
+<suite id="s1" name="4 Robot Framework" source="C:\Users\vdi-student\Desktop\BigData2425\Zjazd6_praktyczne_dodatki\4_robot_framework.robot">
+<test id="s1-t1" name="Log in wikipedia" line="11">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-01T14:13:52.328095" level="INFO">Opening browser 'chrome' to base url 'https://pl.wikipedia.org'.</msg>
+<arg>https://pl.wikipedia.org</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-01T14:13:52.328095" elapsed="2.037950"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-01T14:13:54.367058" level="INFO">Clicking element 'id:pt-login-2'.</msg>
+<arg>id:pt-login-2</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-01T14:13:54.366045" elapsed="1.113553"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-01T14:13:55.480603" level="INFO">Typing text 'Kamil' into text field 'wpName1'.</msg>
+<arg>wpName1</arg>
+<arg>Kamil</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-01T14:13:55.480603" elapsed="0.098987"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-01T14:13:55.579590" level="INFO">Typing text 'aaa' into text field 'wpPassword1'.</msg>
+<arg>wpPassword1</arg>
+<arg>aaa</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-01T14:13:55.579590" elapsed="0.096998"/>
+</kw>
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<msg time="2025-03-01T14:13:55.677585" level="INFO">Selecting checkbox 'wpRememberh'.</msg>
+<msg time="2025-03-01T14:13:55.765589" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-01T14:13:55.766591" level="FAIL">Checkbox with locator 'wpRememberh' not found.</msg>
+<arg>wpRememberh</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="FAIL" start="2025-03-01T14:13:55.677585" elapsed="0.091006">Checkbox with locator 'wpRememberh' not found.</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>wpLoginAttempt</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-01T14:13:55.769600" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-01T14:13:55.769600" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-03-01T14:13:55.770589" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-03-01T14:13:52.326096" elapsed="3.444493">Checkbox with locator 'wpRememberh' not found.</status>
+</test>
+<status status="FAIL" start="2025-03-01T14:13:52.017099" elapsed="3.754538"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="4 Robot Framework" id="s1" pass="0" fail="1" skip="0">4 Robot Framework</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
