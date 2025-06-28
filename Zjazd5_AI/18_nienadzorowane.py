@@ -1,12 +1,30 @@
 import pandas as pd
+from scipy.cluster.vq import kmeans
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 df = pd.read_csv('dane\\Mall_Customers.csv')
 print(df.describe().T.to_string())
-
 X = df[['Annual Income (k$)', 'Spending Score (1-100)']]
+
+# Metoda łokcia
+inertias = []
+K_range = range(1, 11)
+for k in K_range:
+    model = KMeans(n_clusters=k, n_init=10)
+    model.fit(X)
+    inertias.append(model.inertia_)
+
+plt.plot(K_range, inertias, marker='o', color='steelblue')
+plt.title('Metoda łokcia - wybór optymalnego k')
+plt.xlabel('Liczba klastrów (k)')
+plt.ylabel('Suma kwadratów odchyleń (inertia)')
+plt.xticks(list(K_range))
+plt.grid(True)
+plt.show()
+
+
 
 model = KMeans()
 labels = model.fit_predict(X)
