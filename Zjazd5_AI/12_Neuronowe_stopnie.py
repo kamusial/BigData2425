@@ -17,7 +17,7 @@ model.compile(optimizer='rmsprop', loss='mse')
 df = pd.read_csv('dane\\f-c.csv', usecols=[1, 2])
 print(df)
 
-result = model.fit(df.F, df.C, epochs=3000, verbose=2)
+result = model.fit(df.F, df.C, epochs=300, verbose=2)
 df1 = pd.DataFrame(result.history)
 print(df1)
 df1.plot()

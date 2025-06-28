@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from sklearn.datasets import make_circles
 import pandas as pd
 
-X, y = make_circles(n_saamples=1000, factor=0.8, noise=0.2)
+X, y = make_circles(n_samples=1000, factor=0.8, noise=0.2)
 print(X)
 print(y)
 plt.scatter(X[:, 0], X[:, 1]   , c=y  )
